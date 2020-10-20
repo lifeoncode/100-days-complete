@@ -1,318 +1,371 @@
-@import './config';
+@import "./config";
 
-
-body{
-    background-color: $white;
-    height: 100vh;
-    overflow: hidden;
-    transition: all 2s ease;;
-    opacity: 0;
+body {
+  background-color: $white;
+  height: 100vh;
+  overflow: hidden;
+  transition: all 2s ease;
+  opacity: 0;
 }
 
 // menu
-.menu_btn{
-    position: fixed;
-    top: 32px;
-    left: 32px;
-    z-index: 5;
-    width: 40px;
-    height: auto;
+.menu_btn {
+  position: fixed;
+  top: 32px;
+  left: 32px;
+  z-index: 5;
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+  @include transitionEase;
+
+  &.open {
+    left: 15%;
+  }
+
+  span:nth-of-type(1) {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    border-radius: 32px;
+    @include transitionEase;
+
+    &.open {
+      width: 75%;
+      margin-left: 25%;
+    }
+  }
+  span:nth-of-type(2) {
+    @extend span:nth-of-type(1);
+    margin: 4px 0;
+
+    &.open {
+      width: 50%;
+      margin-left: 50%;
+    }
+  }
+  span:nth-of-type(3) {
+    @extend span:nth-of-type(1);
+
+    &.open {
+      width: 25%;
+      margin-left: 75%;
+    }
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  height: 100vh;
+  width: 20%;
+  background-color: $white;
+  transform: translateX(-100%);
+  @include flexDisplay(column, center, center);
+  @include transitionEase;
+
+  &.open {
+    transform: translateX(0%);
+  }
+
+  nav {
+    span {
+      position: relative;
+      display: block;
+      margin-bottom: 64px;
+      font-family: "Pompiere", cursive;
+      font-size: $big-font;
+      cursor: pointer;
+      transform: translateX(-150%);
+      @include transitionFast;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.open {
+        transform: translateX(0%);
+      }
+
+      &:hover span {
+        width: 100%;
+      }
+
+      span {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        left: 0;
+        width: 10%;
+        height: 1px;
+        background-color: #000;
+        transform: translateX(0%);
+        @include transitionFast;
+      }
+    }
+  }
+}
+
+// aside timeline
+aside {
+  position: fixed;
+  z-index: 3;
+  right: 32px;
+  top: 200px;
+  height: 30%;
+  background-color: red;
+
+  .line {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: rgba(0, 0, 0, 0.199);
+    opacity: 0.2;
+  }
+
+  span {
+    position: absolute;
+    top: 0;
+    right: -3px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    display: block;
+    background-color: #000;
+    opacity: 0.2;
     cursor: pointer;
     @include transitionEase;
 
-    &.open{
-        left: 15%;
+    &.one {
+      opacity: 1;
     }
 
-    span:nth-of-type(1){
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: #000;
-        border-radius: 32px;
-        @include transitionEase;
-
-        &.open{
-            width: 75%;
-            margin-left: 25%;
-        }
+    &.two {
+      top: 35%;
     }
-    span:nth-of-type(2){
-        @extend span:nth-of-type(1);
-        margin: 4px 0;
-
-        &.open{
-            width: 50%;
-            margin-left: 50%;
-        }
+    &.three {
+      top: 65%;
     }
-    span:nth-of-type(3){
-        @extend span:nth-of-type(1);
-
-        &.open{
-            width: 25%;
-            margin-left: 75%;
-        }
+    &.four {
+      top: 100%;
     }
+  }
 }
 
-.menu{
+// main
+main {
+  position: relative;
+  height: 100%;
+
+  // header
+  header {
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 26px 0;
+    text-align: center;
+    background-color: $white;
+    border-bottom: 1px solid #000;
+
+    h1 {
+      font-size: $large-font;
+    }
+  }
+
+  section {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 4;
-    height: 100vh;
-    width: 20%;
-    background-color: $white;
-    transform: translateX(-100%);
-    @include flexDisplay(column, center, center);
-    @include transitionEase;    
-
-    &.open{
-        transform: translateX(0%);
-    }
-
-    nav{
-        span{
-            position: relative;
-            display: block;
-            margin-bottom: 64px;
-            font-family: 'Pompiere', cursive;
-            font-size: $big-font;
-            cursor: pointer;
-            transform: translateX(-150%);
-            @include transitionFast;
-
-            &:last-child{
-                margin-bottom: 0;
-            }
-
-            &.open{
-                transform: translateX(0%);
-            }
-
-            &:hover span{
-                width: 100%;
-            }
-
-            span{
-                display: block;
-                position: absolute;
-                bottom: 0;
-                margin: 0;
-                left: 0;
-                width: 10%;
-                height: 1px;
-                background-color: #000;
-                transform: translateX(0%);
-                @include transitionFast;
-            }
-        }
-    }
-}
-
-
-
-// aside timeline
-aside{
-    position: fixed;
-    z-index: 3;
-    right: 32px;
-    top: 200px;
-    height: 30%;
-    background-color: red;
-
-    .line{
-        position: absolute;
-        height: 100%;
-        width: 1px;
-        background-color: rgba(0, 0, 0, 0.199);
-        opacity: 0.2;
-    }
-
-    span{
-        position: absolute;
-        top: 0;
-        right: -3px;
-        height: 6px;
-        width: 6px;
-        border-radius: 50%;
-        display: block;
-        background-color: #000;
-        opacity: 0.2;
-        cursor: pointer;
-        @include transitionEase;
-
-        &.one{
-            opacity: 1;
-        }
-        
-        &.two{
-            top: 35%;
-        }
-        &.three{
-            top: 65%;
-        }
-        &.four{
-            top: 100%;
-        }
-    }   
-}
-
-
-
-
-
-// main
-main{
-    position: relative;
     height: 100%;
+    width: 100%;
+    padding: 160px 0 60px 0;
+    @include transitionSlower;
 
-    // header
-    header{
-        position: fixed;
-        z-index: 3;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 26px 0;
-        text-align: center;
-        background-color: $white;
-        border-bottom: 1px solid #000;
-    
-        h1{
-            font-size: $large-font;
+    .container {
+      h2 {
+        font-size: $large-font - 2;
+        margin-bottom: 32px;
+      }
+
+      p {
+        font-size: $medium-font + 2;
+        line-height: 1.5;
+
+        a {
+          text-decoration: underline;
+          color: #000;
+          font-size: $medium-font + 2;
         }
+      }
+
+      a.btn {
+        font-size: $medium-font + 4;
+        color: #000;
+        text-decoration: none;
+        padding: 10px 26px;
+        background-color: transparent;
+        border: 1px solid #000;
+        @include transitionFast;
+
+        &:hover {
+          background-color: #000;
+          color: #fff;
+        }
+      }
     }
 
-    section{
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        padding: 160px 0 60px 0;
+    &.about,
+    &.lessons,
+    &.next {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  // home section
+  section.home {
+    .container {
+      @include gridDisplay(repeat(2, 1fr), 16px);
+
+      .text {
+        padding-right: 32px;
+
+        p {
+          margin-bottom: 64px;
+        }
+      }
+
+      .images {
+        position: relative;
+        overflow: hidden;
         @include transitionSlower;
 
-        .container{
-            h2{
-                font-size: $big-font + 2;
-                margin-bottom: 32px;
-            }
-            
-            p{
-                font-size: $medium-font + 2;
-                line-height: 1.5;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include transitionSlower;
+        }
+        img:nth-of-type(2),
+        img:nth-of-type(3),
+        img:nth-of-type(4),
+        img:nth-of-type(5),
+        img:nth-of-type(6) {
+          transform: translateX(100%);
+        }
+      }
+    }
+  }
 
-                a{
-                    text-decoration: underline;
-                    color: #000;
-                    font-size: $medium-font + 2
-                }
-            }
+  // about section
+  section.about {
+    .container {
+      position: relative;
 
-            a.btn{
-                font-size: $medium-font + 4;
-                color: #000;
-                text-decoration: none;
-                padding: 10px 26px;
-                background-color: transparent;
-                border: 1px solid #000;
-                @include transitionFast;
+      p {
+        margin-bottom: 80px;
+      }
 
-                &:hover{
-                    background-color: #000;
-                    color: #fff;
-                }
-            }
+      h3.question {
+        font-size: $medium-font + 2;
+        margin-bottom: 64px;
+        display: inline-block;
+        cursor: pointer;
+
+        &:hover i {
+          opacity: 1;
+          margin-left: 32px;
         }
 
-        &.about, &.lessons, &.next{
-            transform: translateY(100%);
+        i {
+          opacity: 0;
+          @include transitionFast;
         }
+      }
+      h3.question:last-child {
+        margin-bottom: 0;
+      }
     }
 
+    .answer {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      padding: 32px 16px;
+      box-shadow: -5px 5px 26px #dedede;
+      opacity: 0;
+      @include transitionEase;
 
-    // home section
-    section.home{
-        .container{
-            @include gridDisplay(repeat(2, 1fr), 16px);
-
-            .text{
-                padding-right: 32px;
-
-                p{
-                    margin-bottom: 64px;
-                }
-            }
-
-            .images{
-                position: relative;
-                overflow: hidden;
-                @include transitionSlower;
-
-                img{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    @include transitionSlower;
-                }
-                img:nth-of-type(2), img:nth-of-type(3), img:nth-of-type(4),
-                img:nth-of-type(5), img:nth-of-type(6){
-                    transform: translateX(100%);
-                }
-            }
-        }
+      h3 {
+        margin-bottom: 32px;
+        font-size: $big-font - 2;
+      }
+      p {
+        margin-bottom: 0;
+      }
     }
+  }
 
+  //   lessons section
+  section.lessons {
+    .lessons_inner {
+      @include gridDisplay(repeat(4, 1fr), 5px);
 
-    
-    
+      div {
+        padding: 42px 0;
+        background-color: #332233;
+        cursor: pointer;
+        @include transitionEase;
+      }
 
-    // about section
-    section.about{
-        
+      div.sass {
+        grid-column: 3;
+        grid-row: 1/3;
+      }
+
+      div.kali_linux {
+        grid-column: 1/3;
+      }
     }
+  }
 }
 
+// footer
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 0 0 16px 0;
+  background-color: $white;
 
+  .container {
+    @include flexDisplay(row, center, space-between);
+    padding-top: 16px;
+    border-top: 1px solid #000;
 
-
-
-
-
-
-
-footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 3;
-    padding: 0 0 16px 0;
-    background-color: $white;
-
-    .container{
-        @include flexDisplay(row, center, space-between);
-        padding-top: 16px;
-        border-top: 1px solid #000;
-
-        div:first-child{
-            a{
-                margin: 0 16px;
-                font-size: $medium-font;
-                color: #000;
-            }
-        }
-        
-        div:last-child{
-            font-size: $small-font;
-            a{
-                margin-left: 10px;
-                color: red;
-                text-decoration: none;
-            }
-        }
-
+    div:first-child {
+      a {
+        margin: 0 16px;
+        font-size: $medium-font;
+        color: #000;
+      }
     }
+
+    div:last-child {
+      font-size: $small-font;
+      a {
+        margin-left: 10px;
+        color: red;
+        text-decoration: none;
+      }
+    }
+  }
 }

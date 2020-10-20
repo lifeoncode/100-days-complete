@@ -90,6 +90,15 @@ window.addEventListener('DOMContentLoaded', function(e){
         lessons.style.transform = `translateY(100%)`;
         next.style.transform = `translateY(100%)`;
 
+        setTimeout(() => {
+            home.style.opacity = '1';
+        }, 100);
+        
+        let [...allSections] = [about, lessons, next];
+        allSections.forEach(section => {
+            section.style.opacity = '0';
+        })
+
         one.style.opacity = '1';
         two.style.opacity = '0.2';
         three.style.opacity = '0.2';
@@ -101,6 +110,15 @@ window.addEventListener('DOMContentLoaded', function(e){
         about.style.transform = `translateY(0%)`;
         lessons.style.transform = `translateY(100%)`;
         next.style.transform = `translateY(100%)`;
+
+        setTimeout(() => {
+            about.style.opacity = '1';
+        }, 100);
+
+        let [...allSections] = [home, lessons, next];
+        allSections.forEach(section => {
+            section.style.opacity = '0';
+        })
 
         one.style.opacity = '0.2';
         two.style.opacity = '1';
@@ -114,6 +132,15 @@ window.addEventListener('DOMContentLoaded', function(e){
         lessons.style.transform = `translateY(0%)`;
         next.style.transform = `translateY(100%)`;
 
+        setTimeout(() => {
+            lessons.style.opacity = '1';
+        }, 100);
+
+        let [...allSections] = [home, about, next];
+        allSections.forEach(section => {
+            section.style.opacity = '0';
+        })
+        
         one.style.opacity = '0.2';
         two.style.opacity = '0.2';
         three.style.opacity = '1';
@@ -125,6 +152,15 @@ window.addEventListener('DOMContentLoaded', function(e){
         about.style.transform = `translateY(-100%)`;
         lessons.style.transform = `translateY(-100%)`;
         next.style.transform = `translateY(0%)`;
+
+        setTimeout(() => {
+            next.style.opacity = '1';
+        }, 100);
+
+        let [...allSections] = [home, about, lessons];
+        allSections.forEach(section => {
+            section.style.opacity = '0';
+        })
 
         one.style.opacity = '0.2';
         two.style.opacity = '0.2';
@@ -186,4 +222,27 @@ window.addEventListener('DOMContentLoaded', function(e){
         }, 25000);
     }
     
+
+
+    // about section
+    const [questionA, questionB, questionC] = [document.querySelector('.question_a'), document.querySelector('.question_b'), document.querySelector('.question_c')]
+
+    const [ansA, ansB, ansC] = [document.querySelector('.answer_a'), document.querySelector('.answer_b'), document.querySelector('.answer_c')];
+    
+    // events
+    questionA.addEventListener('mouseover', (e) => {
+        ansA.style.opacity = '1';
+        ansB.style.opacity = '0';
+        ansC.style.opacity = '0';
+    });
+    questionB.addEventListener('mouseover', (e) => {
+        ansB.style.opacity = '1';
+        ansA.style.opacity = '0';
+        ansC.style.opacity = '0';
+    });
+    questionC.addEventListener('mouseover', (e) => {
+        ansC.style.opacity = '1';
+        ansA.style.opacity = '0';
+        ansB.style.opacity = '0';
+    });
 })
