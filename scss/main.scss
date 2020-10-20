@@ -5,6 +5,8 @@ body{
     background-color: $white;
     height: 100vh;
     overflow: hidden;
+    transition: all 2s ease;;
+    opacity: 0;
 }
 
 // menu
@@ -176,7 +178,7 @@ main{
         padding: 26px 0;
         text-align: center;
         background-color: $white;
-        border-bottom: 1px solid red;
+        border-bottom: 1px solid #000;
     
         h1{
             font-size: $large-font;
@@ -193,14 +195,92 @@ main{
         @include transitionSlower;
 
         .container{
-            border: 1px solid red;
+            h2{
+                font-size: $big-font + 2;
+                margin-bottom: 32px;
+            }
+            
+            p{
+                font-size: $medium-font + 2;
+                line-height: 1.5;
+
+                a{
+                    text-decoration: underline;
+                    color: #000;
+                    font-size: $medium-font + 2
+                }
+            }
+
+            a.btn{
+                font-size: $medium-font + 4;
+                color: #000;
+                text-decoration: none;
+                padding: 10px 26px;
+                background-color: transparent;
+                border: 1px solid #000;
+                @include transitionFast;
+
+                &:hover{
+                    background-color: #000;
+                    color: #fff;
+                }
+            }
         }
 
         &.about, &.lessons, &.next{
             transform: translateY(100%);
         }
     }
+
+
+    // home section
+    section.home{
+        .container{
+            @include gridDisplay(repeat(2, 1fr), 16px);
+
+            .text{
+                padding-right: 32px;
+
+                p{
+                    margin-bottom: 64px;
+                }
+            }
+
+            .images{
+                position: relative;
+                overflow: hidden;
+                @include transitionSlower;
+
+                img{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include transitionSlower;
+                }
+                img:nth-of-type(2), img:nth-of-type(3), img:nth-of-type(4),
+                img:nth-of-type(5), img:nth-of-type(6){
+                    transform: translateX(100%);
+                }
+            }
+        }
+    }
+
+
+    
+    
+
+    // about section
+    section.about{
+        
+    }
 }
+
+
+
+
+
+
+
 
 
 footer{
@@ -209,6 +289,30 @@ footer{
     bottom: 0;
     width: 100%;
     z-index: 3;
-    padding: 16px 0;
-    background-color: yellow;
+    padding: 0 0 16px 0;
+    background-color: $white;
+
+    .container{
+        @include flexDisplay(row, center, space-between);
+        padding-top: 16px;
+        border-top: 1px solid #000;
+
+        div:first-child{
+            a{
+                margin: 0 16px;
+                font-size: $medium-font;
+                color: #000;
+            }
+        }
+        
+        div:last-child{
+            font-size: $small-font;
+            a{
+                margin-left: 10px;
+                color: red;
+                text-decoration: none;
+            }
+        }
+
+    }
 }

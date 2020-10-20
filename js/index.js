@@ -1,6 +1,8 @@
 
 window.addEventListener('DOMContentLoaded', function(e){
 
+    document.querySelector('body').style.opacity = '1';
+    
     // DOM elements
     const [menuBtn, hamburger, menuDiv] = [document.querySelector('.menu_btn'), document.querySelectorAll('.menu_btn span'), document.querySelector('.menu')];
     // menu links
@@ -72,7 +74,17 @@ window.addEventListener('DOMContentLoaded', function(e){
     // timeline
     const [one, two, three, four] = [document.querySelector('.one'), document.querySelector('.two'), document.querySelector('.three'), document.querySelector('.four')]
     
-    homeLink.addEventListener('click', (e) => {
+    homeLink.addEventListener('click', homeFun);
+    aboutLink.addEventListener('click', aboutFun);
+    lessonsLink.addEventListener('click', lessonsFun);
+    nextLink.addEventListener('click', nextFun);
+
+    one.addEventListener('click', homeFun);
+    two.addEventListener('click', aboutFun);
+    three.addEventListener('click', lessonsFun);
+    four.addEventListener('click', nextFun);
+
+    function homeFun(e){
         home.style.transform = `translateY(0%)`;
         about.style.transform = `translateY(100%)`;
         lessons.style.transform = `translateY(100%)`;
@@ -82,8 +94,9 @@ window.addEventListener('DOMContentLoaded', function(e){
         two.style.opacity = '0.2';
         three.style.opacity = '0.2';
         four.style.opacity = '0.2';
-    })
-    aboutLink.addEventListener('click', (e) => {
+    }
+
+    function aboutFun(e){
         home.style.transform = `translateY(-100%)`;
         about.style.transform = `translateY(0%)`;
         lessons.style.transform = `translateY(100%)`;
@@ -93,8 +106,9 @@ window.addEventListener('DOMContentLoaded', function(e){
         two.style.opacity = '1';
         three.style.opacity = '0.2';
         four.style.opacity = '0.2';
-    })
-    lessonsLink.addEventListener('click', (e) => {
+    }
+
+    function lessonsFun(e){
         home.style.transform = `translateY(-100%)`;
         about.style.transform = `translateY(-100%)`;
         lessons.style.transform = `translateY(0%)`;
@@ -104,8 +118,9 @@ window.addEventListener('DOMContentLoaded', function(e){
         two.style.opacity = '0.2';
         three.style.opacity = '1';
         four.style.opacity = '0.2';
-    })
-    nextLink.addEventListener('click', (e) => {
+    }
+    
+    function nextFun(e){
         home.style.transform = `translateY(-100%)`;
         about.style.transform = `translateY(-100%)`;
         lessons.style.transform = `translateY(-100%)`;
@@ -115,5 +130,60 @@ window.addEventListener('DOMContentLoaded', function(e){
         two.style.opacity = '0.2';
         three.style.opacity = '0.2';
         four.style.opacity = '1';
-    })
+    }
+
+
+    // setInterval(() => slideImages(), 6000);
+
+    setTimeout(() => {
+        slideImages();
+    }, 5000);
+
+    setInterval(() => slideImages(), 50000);
+
+    const images = document.querySelector('.images').children;
+
+    function slideImages(e){
+        images[0].style.transform = `translateX(-100%)`;
+        images[1].style.transform = `translateX(0%)`;
+        setTimeout(() => {
+            images[1].style.transform = `translateX(-100%)`;
+            images[2].style.transform = `translateX(0%)`;
+        }, 5000);
+        setTimeout(() => {
+            images[2].style.transform = `translateX(-100%)`;
+            images[3].style.transform = `translateX(0%)`;
+        }, 10000);
+        setTimeout(() => {
+            images[3].style.transform = `translateX(-100%)`;
+            images[4].style.transform = `translateX(0%)`;
+        }, 15000);
+        setTimeout(() => {
+            images[4].style.transform = `translateX(-100%)`;
+            images[5].style.transform = `translateX(0%)`;
+        }, 20000);
+
+        // reverse
+        setTimeout(() => {
+            images[0].style.transform = `translateX(0%)`;
+            images[1].style.transform = `translateX(100%)`;
+        }, 45000);
+        setTimeout(() => {
+            images[1].style.transform = `translateX(0%)`;
+            images[2].style.transform = `translateX(100%)`;
+        }, 40000);
+        setTimeout(() => {
+            images[2].style.transform = `translateX(0%)`;
+            images[3].style.transform = `translateX(100%)`;
+        }, 35000);
+        setTimeout(() => {
+            images[3].style.transform = `translateX(0%)`;
+            images[4].style.transform = `translateX(100%)`;
+        }, 30000);
+        setTimeout(() => {
+            images[4].style.transform = `translateX(0%)`;
+            images[5].style.transform = `translateX(100%)`;
+        }, 25000);
+    }
+    
 })

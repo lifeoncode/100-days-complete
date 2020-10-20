@@ -18,10 +18,14 @@ h1, h2, h3{
     font-weight: bold;
 }
 
-p{
+p, a, span{
     font-family: 'Marvel', sans-serif;
     line-height: 1.4;
     font-weight: 400;
+}
+
+img{
+    width: 100%;
 }
 
 .container{
@@ -68,3 +72,4 @@ $white: #f8f8f9;
 @mixin transitionFast {
     transition: all 0.3s linear;
 }
+
