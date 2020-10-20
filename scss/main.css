@@ -1,1 +1,202 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&family=Mirza:wght@400;500;600;700&family=Odibee+Sans&family=Pompiere&family=Trochut:wght@400;700&display=swap");
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+*:focus, *::before:focus, *::after:focus {
+  outline: none;
+}
+
+h1, h2, h3 {
+  font-family: 'Pompiere', cursive;
+  font-weight: bold;
+}
+
+p {
+  font-family: 'Marvel', sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #f8f8f9;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu_btn {
+  position: fixed;
+  top: 32px;
+  left: 32px;
+  z-index: 5;
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.menu_btn.open {
+  left: 15%;
+}
+
+.menu_btn span:nth-of-type(1), .menu_btn span:nth-of-type(2), .menu_btn span:nth-of-type(3) {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  border-radius: 32px;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.menu_btn span:nth-of-type(1).open, .menu_btn span.open:nth-of-type(2), .menu_btn span.open:nth-of-type(3) {
+  width: 75%;
+  margin-left: 25%;
+}
+
+.menu_btn span:nth-of-type(2) {
+  margin: 4px 0;
+}
+
+.menu_btn span:nth-of-type(2).open {
+  width: 50%;
+  margin-left: 50%;
+}
+
+.menu_btn span:nth-of-type(3).open {
+  width: 25%;
+  margin-left: 75%;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  height: 100vh;
+  width: 20%;
+  background-color: #f8f8f9;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+.menu.open {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.menu nav span {
+  position: relative;
+  display: block;
+  margin-bottom: 64px;
+  font-family: 'Pompiere', cursive;
+  font-size: 26px;
+  cursor: pointer;
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.menu nav span:last-child {
+  margin-bottom: 0;
+}
+
+.menu nav span.open {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+.menu nav span:hover span {
+  width: 100%;
+}
+
+.menu nav span span {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  left: 0;
+  width: 10%;
+  height: 1px;
+  background-color: #000;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+main {
+  position: relative;
+  height: 100%;
+}
+
+main header {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 26px 0;
+  text-align: center;
+  background-color: #f8f8f9;
+  border-bottom: 1px solid red;
+}
+
+main header h1 {
+  font-size: 32px;
+}
+
+main section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 160px 0 60px 0;
+}
+
+main section .container {
+  border: 1px solid red;
+}
+
+main section.about, main section.lessons, main section.next {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+  padding: 16px 0;
+  background-color: yellow;
+}
+/*# sourceMappingURL=main.css.map */
