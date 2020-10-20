@@ -381,6 +381,28 @@ main section.lessons .lessons_inner div {
   cursor: pointer;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main section.lessons .lessons_inner div:hover {
+  background: black;
+}
+
+main section.lessons .lessons_inner div h3 {
+  color: #f8f8f9;
+  font-size: 17px;
 }
 
 main section.lessons .lessons_inner div.sass {

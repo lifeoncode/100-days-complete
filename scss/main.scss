@@ -322,6 +322,15 @@ main {
         background-color: #332233;
         cursor: pointer;
         @include transitionEase;
+        @include flexDisplay(column, center, center);
+        &:hover {
+          background: darken(#332233, 25%);
+        }
+
+        h3 {
+          color: $white;
+          font-size: $medium-font + 2;
+        }
       }
 
       div.sass {

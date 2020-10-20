@@ -245,4 +245,7 @@ window.addEventListener('DOMContentLoaded', function(e){
         ansA.style.opacity = '0';
         ansB.style.opacity = '0';
     });
+
+    // lessons section
+    
 })
