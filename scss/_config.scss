@@ -57,6 +57,10 @@ $white: #f8f8f9;
     transition: all 1s ease;
 }
 
+@mixin transitionSlower {
+    transition: all 1.5s ease;
+}
+
 @mixin transitionEase {
     transition: all 0.6s ease;
 }

@@ -111,6 +111,56 @@ body{
 
 
 
+// aside timeline
+aside{
+    position: fixed;
+    z-index: 3;
+    right: 32px;
+    top: 200px;
+    height: 30%;
+    background-color: red;
+
+    .line{
+        position: absolute;
+        height: 100%;
+        width: 1px;
+        background-color: rgba(0, 0, 0, 0.199);
+        opacity: 0.2;
+    }
+
+    span{
+        position: absolute;
+        top: 0;
+        right: -3px;
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+        display: block;
+        background-color: #000;
+        opacity: 0.2;
+        cursor: pointer;
+        @include transitionEase;
+
+        &.one{
+            opacity: 1;
+        }
+        
+        &.two{
+            top: 35%;
+        }
+        &.three{
+            top: 65%;
+        }
+        &.four{
+            top: 100%;
+        }
+    }   
+}
+
+
+
+
+
 // main
 main{
     position: relative;
@@ -140,6 +190,7 @@ main{
         height: 100%;
         width: 100%;
         padding: 160px 0 60px 0;
+        @include transitionSlower;
 
         .container{
             border: 1px solid red;
