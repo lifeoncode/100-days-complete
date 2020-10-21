@@ -3,6 +3,22 @@ window.addEventListener('DOMContentLoaded', function(e){
 
     document.querySelector('body').style.opacity = '1';
     
+    // display current time
+    setInterval(() => showTime(), 1000);
+    function showTime(){
+        const time = new Date();
+        const [hrs, min, sec] = [time.getHours(), time.getMinutes(), time.getSeconds()];
+        const realTime = `${addZero(hrs)}:${addZero(min)}:${addZero(sec)}`;
+
+        document.querySelector('.clock').textContent = realTime;
+
+        // add zeros
+        function addZero(n){
+            return (parseInt(n, 10) < 10 ? '0' : '') + n;
+        }
+    }
+    
+    
     // DOM elements
     const [menuBtn, hamburger, menuDiv] = [document.querySelector('.menu_btn'), document.querySelectorAll('.menu_btn span'), document.querySelector('.menu')];
     // menu links
@@ -99,10 +115,10 @@ window.addEventListener('DOMContentLoaded', function(e){
             section.style.opacity = '0';
         })
 
-        one.style.opacity = '1';
-        two.style.opacity = '0.2';
-        three.style.opacity = '0.2';
-        four.style.opacity = '0.2';
+        one.style.transform = 'scale(2)';
+        two.style.transform = 'scale(1)';
+        three.style.transform = 'scale(1)';
+        four.style.transform = 'scale(1)';
     }
 
     function aboutFun(e){
@@ -120,10 +136,10 @@ window.addEventListener('DOMContentLoaded', function(e){
             section.style.opacity = '0';
         })
 
-        one.style.opacity = '0.2';
-        two.style.opacity = '1';
-        three.style.opacity = '0.2';
-        four.style.opacity = '0.2';
+        one.style.transform = 'scale(1)';
+        two.style.transform = 'scale(2)';
+        three.style.transform = 'scale(1)';
+        four.style.transform = 'scale(1)';
     }
 
     function lessonsFun(e){
@@ -141,10 +157,10 @@ window.addEventListener('DOMContentLoaded', function(e){
             section.style.opacity = '0';
         })
         
-        one.style.opacity = '0.2';
-        two.style.opacity = '0.2';
-        three.style.opacity = '1';
-        four.style.opacity = '0.2';
+        one.style.transform = 'scale(1)';
+        two.style.transform = 'scale(1)';
+        three.style.transform = 'scale(2)';
+        four.style.transform = 'scale(1)';
     }
     
     function nextFun(e){
@@ -162,10 +178,10 @@ window.addEventListener('DOMContentLoaded', function(e){
             section.style.opacity = '0';
         })
 
-        one.style.opacity = '0.2';
-        two.style.opacity = '0.2';
-        three.style.opacity = '0.2';
-        four.style.opacity = '1';
+        one.style.transform = 'scale(1)';
+        two.style.transform = 'scale(1)';
+        three.style.transform = 'scale(1)';
+        four.style.transform = 'scale(2)';
     }
 
 
@@ -231,21 +247,40 @@ window.addEventListener('DOMContentLoaded', function(e){
     
     // events
     questionA.addEventListener('mouseover', (e) => {
-        ansA.style.opacity = '1';
-        ansB.style.opacity = '0';
-        ansC.style.opacity = '0';
+        ansA.style.display = 'block';
+        ansB.style.display = 'none';
+        ansC.style.display = 'none';
+
+        setTimeout(() => {
+            ansA.style.opacity = '1';
+            ansB.style.opacity = '0';
+            ansC.style.opacity = '0';
+        }, 50);
     });
     questionB.addEventListener('mouseover', (e) => {
-        ansB.style.opacity = '1';
-        ansA.style.opacity = '0';
-        ansC.style.opacity = '0';
+        ansB.style.display = 'block';
+        ansA.style.display = 'none';
+        ansC.style.display = 'none';
+
+        setTimeout(() => {
+            ansB.style.opacity = '1';
+            ansA.style.opacity = '0';
+            ansC.style.opacity = '0';
+        }, 50);
     });
     questionC.addEventListener('mouseover', (e) => {
-        ansC.style.opacity = '1';
-        ansA.style.opacity = '0';
-        ansB.style.opacity = '0';
+        ansC.style.display = 'block';
+        ansA.style.display = 'none';
+        ansB.style.display = 'none';
+
+        setTimeout(() => {
+            ansC.style.opacity = '1';
+            ansA.style.opacity = '0';
+            ansB.style.opacity = '0';
+        }, 50);
     });
 
     // lessons section
+    // const git = document.querySelector('.git');
     
 })

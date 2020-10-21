@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&family=Mirza:wght@400;500;600;700&family=Odibee+Sans&family=Pompiere&family=Trochut:wght@400;700&display=swap");
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   scroll-behavior: smooth;
@@ -7,17 +9,23 @@
   margin: 0;
 }
 
-*:focus, *::before:focus, *::after:focus {
+*:focus,
+*::before:focus,
+*::after:focus {
   outline: none;
 }
 
-h1, h2, h3 {
-  font-family: 'Pompiere', cursive;
+h1,
+h2,
+h3 {
+  font-family: "Pompiere", cursive;
   font-weight: bold;
 }
 
-p, a, span {
-  font-family: 'Marvel', sans-serif;
+p,
+a,
+span {
+  font-family: "Marvel", sans-serif;
   line-height: 1.4;
   font-weight: 400;
 }
@@ -32,12 +40,14 @@ img {
 }
 
 body {
-  background-color: #f8f8f9;
+  background-color: #0064c8;
   height: 100vh;
   overflow: hidden;
   -webkit-transition: all 2s ease;
   transition: all 2s ease;
   opacity: 0;
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
 }
 
 .menu_btn {
@@ -60,7 +70,7 @@ body {
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #000;
+  background-color: #000000;
   border-radius: 32px;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
@@ -92,7 +102,7 @@ body {
   z-index: 4;
   height: 100vh;
   width: 20%;
-  background-color: #f8f8f9;
+  background-color: #ffffff;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   display: -webkit-box;
@@ -123,6 +133,7 @@ body {
   margin-bottom: 64px;
   font-family: "Pompiere", cursive;
   font-size: 26px;
+  color: #072dac;
   cursor: pointer;
   -webkit-transform: translateX(-150%);
           transform: translateX(-150%);
@@ -151,7 +162,7 @@ body {
   left: 0;
   width: 10%;
   height: 1px;
-  background-color: #000;
+  background-color: #072dac;
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
   -webkit-transition: all 0.3s linear;
@@ -171,8 +182,8 @@ aside .line {
   position: absolute;
   height: 100%;
   width: 1px;
-  background-color: rgba(0, 0, 0, 0.199);
-  opacity: 0.2;
+  background-color: #ffffff;
+  opacity: 0.5;
 }
 
 aside span {
@@ -183,15 +194,15 @@ aside span {
   width: 6px;
   border-radius: 50%;
   display: block;
-  background-color: #000;
-  opacity: 0.2;
+  background-color: #ffffff;
   cursor: pointer;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
 
 aside span.one {
-  opacity: 1;
+  -webkit-transform: scale(2);
+          transform: scale(2);
 }
 
 aside span.two {
@@ -219,12 +230,12 @@ main header {
   width: 100%;
   padding: 26px 0;
   text-align: center;
-  background-color: #f8f8f9;
-  border-bottom: 1px solid #000;
+  background-color: #fbfdff;
 }
 
 main header h1 {
   font-size: 32px;
+  color: #131c46;
 }
 
 main section {
@@ -250,24 +261,23 @@ main section .container p {
 
 main section .container p a {
   text-decoration: underline;
-  color: #000;
   font-size: 17px;
 }
 
 main section .container a.btn {
   font-size: 19px;
-  color: #000;
+  color: #000000;
   text-decoration: none;
   padding: 10px 26px;
-  background-color: transparent;
-  border: 1px solid #000;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 
 main section .container a.btn:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: transparent;
+  color: #ffffff;
 }
 
 main section.about, main section.lessons, main section.next {
@@ -288,8 +298,17 @@ main section.home .container .text {
   padding-right: 32px;
 }
 
+main section.home .container .text h2 {
+  color: #ffffff;
+}
+
 main section.home .container .text p {
   margin-bottom: 64px;
+  color: #ffffff;
+}
+
+main section.home .container .text p a {
+  color: #ffffff;
 }
 
 main section.home .container .images {
@@ -320,8 +339,13 @@ main section.about .container {
   position: relative;
 }
 
+main section.about .container h2 {
+  color: #ffffff;
+}
+
 main section.about .container p {
   margin-bottom: 80px;
+  color: #ffffff;
 }
 
 main section.about .container h3.question {
@@ -329,6 +353,7 @@ main section.about .container h3.question {
   margin-bottom: 64px;
   display: inline-block;
   cursor: pointer;
+  color: #ffffff;
 }
 
 main section.about .container h3.question:hover i {
@@ -340,6 +365,7 @@ main section.about .container h3.question i {
   opacity: 0;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
+  color: #ffffff;
 }
 
 main section.about .container h3.question:last-child {
@@ -351,8 +377,9 @@ main section.about .answer {
   top: 30%;
   left: 50%;
   padding: 32px 16px;
-  -webkit-box-shadow: -5px 5px 26px #dedede;
-          box-shadow: -5px 5px 26px #dedede;
+  background-color: #ffffff;
+  -webkit-box-shadow: -5px 5px 32px #062793;
+          box-shadow: -5px 5px 32px #062793;
   opacity: 0;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
@@ -361,10 +388,20 @@ main section.about .answer {
 main section.about .answer h3 {
   margin-bottom: 32px;
   font-size: 24px;
+  color: #131c46;
 }
 
 main section.about .answer p {
   margin-bottom: 0;
+  color: #131c46;
+}
+
+main section.about .answer p a {
+  color: #131c46;
+}
+
+main section.lessons h2 {
+  color: #ffffff;
 }
 
 main section.lessons .lessons_inner {
@@ -376,9 +413,11 @@ main section.lessons .lessons_inner {
 }
 
 main section.lessons .lessons_inner div {
+  position: relative;
   padding: 42px 0;
-  background-color: #332233;
+  background-color: #ffffff;
   cursor: pointer;
+  overflow: hidden;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
   display: -webkit-box;
@@ -396,13 +435,26 @@ main section.lessons .lessons_inner div {
           justify-content: center;
 }
 
-main section.lessons .lessons_inner div:hover {
-  background: black;
+main section.lessons .lessons_inner div:hover .overlay {
+  width: 100%;
+  left: 0;
+}
+
+main section.lessons .lessons_inner div .overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 10%;
+  width: 10%;
+  height: 100%;
+  background-color: #131c46;
 }
 
 main section.lessons .lessons_inner div h3 {
-  color: #f8f8f9;
-  font-size: 17px;
+  position: relative;
+  z-index: 2;
+  color: #131c46;
+  font-size: 19px;
 }
 
 main section.lessons .lessons_inner div.sass {
@@ -419,6 +471,96 @@ main section.lessons .lessons_inner div.kali_linux {
   grid-column: 1/3;
 }
 
+main section.next h2,
+main section.next h3,
+main section.next p,
+main section.next a {
+  color: #ffffff;
+}
+
+main section.next .timeline {
+  position: relative;
+  width: 80%;
+  margin: 140px auto;
+  border-top: 1px solid #e6e6e6;
+}
+
+main section.next .timeline .dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+main section.next .timeline .dot:nth-of-type(1) {
+  top: -3px;
+  left: 0;
+}
+
+main section.next .timeline .dot:nth-of-type(2) {
+  top: -3px;
+  left: 25%;
+}
+
+main section.next .timeline .dot:nth-of-type(3) {
+  top: -3px;
+  left: 50%;
+}
+
+main section.next .timeline .dot:nth-of-type(4) {
+  top: -3px;
+  right: 25%;
+}
+
+main section.next .timeline .dot:nth-of-type(5) {
+  top: -3px;
+  right: 0;
+}
+
+main section.next .timeline div {
+  position: absolute;
+  width: 20%;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+main section.next .timeline div h3 {
+  margin-bottom: 6px;
+  font-size: 15px;
+  color: #131c46;
+}
+
+main section.next .timeline div p {
+  font-size: 13px;
+  color: #131c46;
+}
+
+main section.next .timeline div:nth-of-type(1) {
+  top: 8px;
+  left: -10%;
+}
+
+main section.next .timeline div:nth-of-type(2) {
+  top: -90px;
+  left: 15%;
+}
+
+main section.next .timeline div:nth-of-type(3) {
+  top: 8px;
+  left: 40%;
+}
+
+main section.next .timeline div:nth-of-type(4) {
+  top: -90px;
+  right: 15%;
+}
+
+main section.next .timeline div:nth-of-type(5) {
+  top: 8px;
+  right: -10%;
+}
+
 footer {
   position: fixed;
   left: 0;
@@ -426,7 +568,7 @@ footer {
   width: 100%;
   z-index: 3;
   padding: 0 0 16px 0;
-  background-color: #f8f8f9;
+  background-color: #fbfdff;
 }
 
 footer .container {
@@ -444,13 +586,18 @@ footer .container {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-top: 16px;
-  border-top: 1px solid #000;
+  border-top: 1px solid #bfbfbf;
+}
+
+footer .container h3.clock {
+  font-size: 13px;
+  color: #131c46;
 }
 
 footer .container div:first-child a {
   margin: 0 16px;
   font-size: 15px;
-  color: #000;
+  color: #131c46;
 }
 
 footer .container div:last-child {
@@ -459,7 +606,12 @@ footer .container div:last-child {
 
 footer .container div:last-child a {
   margin-left: 10px;
-  color: red;
+  color: #072dac;
   text-decoration: none;
+  font-weight: bold;
+}
+
+footer .container div:last-child a:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=main.css.map */

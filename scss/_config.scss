@@ -1,36 +1,42 @@
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&family=Mirza:wght@400;500;600;700&family=Odibee+Sans&family=Pompiere&family=Trochut:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&family=Mirza:wght@400;500;600;700&family=Odibee+Sans&family=Pompiere&family=Trochut:wght@400;700&display=swap");
 
 // reset browser css
-*, *::before, *::after{
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    padding: 0;
-    margin: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
 
-    &:focus{
-        outline: none;
-    }
+  &:focus {
+    outline: none;
+  }
 }
 
-h1, h2, h3{
-    font-family: 'Pompiere', cursive;
-    font-weight: bold;
+h1,
+h2,
+h3 {
+  font-family: "Pompiere", cursive;
+  font-weight: bold;
 }
 
-p, a, span{
-    font-family: 'Marvel', sans-serif;
-    line-height: 1.4;
-    font-weight: 400;
+p,
+a,
+span {
+  font-family: "Marvel", sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
 }
 
-img{
-    width: 100%;
+img {
+  width: 100%;
 }
 
-.container{
-    width: 80%;
-    margin: 0 auto;
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
 
 // font size
@@ -40,36 +46,48 @@ $medium-font: 15px;
 $big-font: 26px;
 $large-font: 32px;
 
-// color
-$white: #f8f8f9;
+// colors
+$black: #000000;
+$white: #ffffff;
+$gray: darken(#ffffff, 50%);
+$lightgray: darken(#ffffff, 25%);
+$darkgray: lighten(#000000, 25%);
+// light theme - solid
+$bg-light: #fbfdff;
+$blue-light: #072dac;
+$cyan-light: #03dac5;
+$yellow-light: #ffde03;
+$text-light: #131c46;
+
+// dark theme
+$bg-dark: #f6f9ff;
 
 // functions - mixins
 @mixin flexDisplay($direction, $align, $justify) {
-    display: flex;
-    flex-direction: $direction;
-    align-items: $align;
-    justify-content: $justify;
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
 }
 
 @mixin gridDisplay($columns, $gap) {
-    display: grid;
-    grid-template-columns: $columns;
-    gap: $gap;
+  display: grid;
+  grid-template-columns: $columns;
+  gap: $gap;
 }
 
 @mixin transitionSlow {
-    transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 @mixin transitionSlower {
-    transition: all 1.5s ease;
+  transition: all 1.5s ease;
 }
 
 @mixin transitionEase {
-    transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 
 @mixin transitionFast {
-    transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
-
