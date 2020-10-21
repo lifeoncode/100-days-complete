@@ -217,6 +217,22 @@ aside span.four {
   top: 100%;
 }
 
+.toggle {
+  position: absolute;
+  top: 26px;
+  right: 32px;
+  z-index: 4;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.toggle i {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  font-size: 26px;
+  color: #131c46;
+}
+
 main {
   position: relative;
   height: 100%;

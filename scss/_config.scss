@@ -55,12 +55,12 @@ $darkgray: lighten(#000000, 25%);
 // light theme - solid
 $bg-light: #fbfdff;
 $blue-light: #072dac;
-$cyan-light: #03dac5;
+$cyan-light: #22e1ee;
 $yellow-light: #ffde03;
 $text-light: #131c46;
 
 // dark theme
-$bg-dark: #f6f9ff;
+$bg-dark: #031f2c;
 
 // functions - mixins
 @mixin flexDisplay($direction, $align, $justify) {

@@ -157,6 +157,22 @@ aside {
   }
 }
 
+// theme toggle
+.toggle {
+  position: absolute;
+  top: 26px;
+  right: 32px;
+  z-index: 4;
+  display: inline-block;
+  cursor: pointer;
+
+  i {
+    transform: rotate(180deg);
+    font-size: $big-font;
+    color: $text-light;
+  }
+}
+
 // main
 main {
   position: relative;

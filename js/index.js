@@ -283,4 +283,71 @@ window.addEventListener('DOMContentLoaded', function(e){
     // lessons section
     // const git = document.querySelector('.git');
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // toggle theme
+    const bulb = document.querySelector('.toggle i');
+    const body = document.querySelector('body');
+    const header = document.querySelector('header');
+    const heading = document.querySelector('h1');
+    const definitions = document.querySelectorAll('.answer');
+    const bodyLinks = document.querySelectorAll('a');
+    
+    bulb.addEventListener('click', darkMode);
+
+    
+    function darkMode(e){
+        bulb.removeEventListener('click', darkMode);
+        bulb.addEventListener('click', lightMode);
+        
+        bulb.setAttribute('class', 'fas');
+        bulb.classList.add('fa-lightbulb');
+        bulb.style.color = '#ffffff';
+
+        // body
+        body.style.backgroundColor = '#0c2431';
+        // header
+        header.style.backgroundColor = '#01131c';
+        heading.style.color = '#ffffff';
+        // menu 
+        hamburger.forEach(ham => {
+            ham.style.backgroundColor = '#ffffff';
+        })
+        menuDiv.style.backgroundColor = '#01131c';
+        // menu links
+        links.forEach(link => {
+            link.style.color = '#22e1ee';
+        })
+        // about section
+        definitions.forEach(definition => {
+            definition.style.backgroundColor = '#132a36';
+            definition.style.boxShadow = '-5px 5px 32px #071c27';
+            definition.firstElementChild.style.color = '#ffffff'; // h3
+            definition.lastElementChild.style.color = '#ffffff'; // p
+        })
+        bodyLinks.forEach(link => {
+            link.style.color = '#ffffff';
+        })
+    }
+
+    function lightMode(e){
+        bulb.removeEventListener('click', lightMode);
+        bulb.addEventListener('click', darkMode);
+        
+        bulb.setAttribute('class', 'far');
+        bulb.classList.add('fa-lightbulb');
+    }
+
+
 })
