@@ -188,6 +188,7 @@ main {
     padding: 26px 0;
     text-align: center;
     background-color: $bg-light;
+    @include transitionEase;
 
     h1 {
       font-size: $large-font;
