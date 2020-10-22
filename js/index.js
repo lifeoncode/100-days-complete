@@ -462,4 +462,5 @@ window.addEventListener('DOMContentLoaded', function(e){
         let hrs = new Date().getHours();
         hrs >= 08 && hrs < 18 ? lightMode() : darkMode();   
     }
+
 })
