@@ -84,10 +84,6 @@ body {
       transform: translateX(-150%);
       @include transitionFast;
 
-      &:last-child {
-        margin-bottom: 0;
-      }
-
       &.open {
         transform: translateX(0%);
       }
@@ -108,6 +104,18 @@ body {
         transform: translateX(0%);
         @include transitionFast;
       }
+    }
+  }
+
+  i.fa-power-off {
+    margin-top: 100px;
+    font-size: $big-font;
+    color: $cyan-light;
+    cursor: pointer;
+    @include transitionEase;
+
+    &:active {
+      transform: scale(0.2);
     }
   }
 }
@@ -170,6 +178,7 @@ aside {
     transform: rotate(180deg);
     font-size: $big-font;
     color: $text-light;
+    @include transitionFast;
   }
 }
 

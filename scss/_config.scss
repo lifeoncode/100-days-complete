@@ -34,6 +34,11 @@ img {
   width: 100%;
 }
 
+.no_click {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;

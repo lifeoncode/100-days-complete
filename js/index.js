@@ -359,6 +359,7 @@ window.addEventListener('DOMContentLoaded', function(e){
         // footer
         footer.style.backgroundColor = '#0c2431';
         footer.firstElementChild.style.borderTop = '1px solid #384953';
+        document.querySelector('.clock').style.color = '#ffffff';
         footer.firstElementChild.lastElementChild.firstElementChild.style.color = '#ffffff';
     }
 
@@ -410,9 +411,55 @@ window.addEventListener('DOMContentLoaded', function(e){
         })
         // footer
         footer.style.backgroundColor = '#fbfdff';
-        footer.firstElementChild.style.borderTop = '1px solid #384953';
+        footer.firstElementChild.style.borderTop = 'none';
+        document.querySelector('.clock').style.color = '#131c46';
         footer.firstElementChild.lastElementChild.firstElementChild.style.color = '#131c46';
     }
 
 
+    // auto toggle theme setting
+    const autoBtn = document.querySelector('#auto-theme');
+    
+    let status = true;
+
+    autoBtn.addEventListener('click', manual);
+
+    function manual(e){
+        status = false;
+        autoBtn.removeEventListener('click', manual);
+        autoBtn.addEventListener('click', auto);
+    }
+
+    function auto(e){
+        status = true;
+        autoBtn.removeEventListener('click', auto);
+        autoBtn.addEventListener('click', manual);
+    }
+    
+    setInterval(() => checkStatus(), 1);
+
+    function checkStatus(e){
+        if(status){
+            autoChangeTheme();
+            bulb.classList.add('no_click');
+            bulb.setAttribute('title', 'auto-mode is ON. turn it off in the menu');
+            autoBtn.style.opacity = '1';
+            autoBtn.style.color = '#22e1ee';
+            autoBtn.setAttribute('title', 'auto-mode: ON');
+
+        }else{
+            bulb.classList.remove('no_click');
+            bulb.removeAttribute('title');
+            // bulb.setAttribute('title', 'auto-mode is ON');
+            autoBtn.style.opacity = '0.2';
+            autoBtn.style.color = '#000';
+            autoBtn.setAttribute('title', 'auto-mode: OFF');
+        }
+    }
+
+    // automatically change theme based on current time
+    function autoChangeTheme(e){
+        let hrs = new Date().getHours();
+        hrs >= 08 && hrs < 18 ? lightMode() : darkMode();   
+    }
 })
