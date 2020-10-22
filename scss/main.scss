@@ -453,6 +453,7 @@ main {
         width: 20%;
         padding: 10px;
         background-color: $white;
+        @include transitionSlower;
 
         h3 {
           margin-bottom: 6px;
@@ -503,6 +504,7 @@ footer {
   z-index: 3;
   padding: 0 0 16px 0;
   background-color: $bg-light;
+  @include transitionSlower;
 
   .container {
     @include flexDisplay(row, center, space-between);

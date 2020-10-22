@@ -541,6 +541,8 @@ main section.next .timeline div {
   width: 20%;
   padding: 10px;
   background-color: #ffffff;
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
 }
 
 main section.next .timeline div h3 {
@@ -587,6 +589,8 @@ footer {
   z-index: 3;
   padding: 0 0 16px 0;
   background-color: #fbfdff;
+  -webkit-transition: all 1.5s ease;
+  transition: all 1.5s ease;
 }
 
 footer .container {

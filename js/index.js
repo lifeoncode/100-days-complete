@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', function(e){
     }
     
     
-    // DOM elements
+    // DOM elementsns
     const [menuBtn, hamburger, menuDiv] = [document.querySelector('.menu_btn'), document.querySelectorAll('.menu_btn span'), document.querySelector('.menu')];
     // menu links
     const [homeLink, aboutLink, lessonsLink, nextLink] = [document.querySelector('.home_link'), document.querySelector('.about_link'), document.querySelector('.lessons_link'), document.querySelector('.next_link')];
@@ -303,6 +303,9 @@ window.addEventListener('DOMContentLoaded', function(e){
     const heading = document.querySelector('h1');
     const definitions = document.querySelectorAll('.answer');
     const bodyLinks = document.querySelectorAll('a');
+    const lessonDivs = [document.querySelector('.git'), document.querySelector('.terminal'), document.querySelector('.git'), document.querySelector('.sass'), document.querySelector('.javascript'), document.querySelector('.kali_linux'), document.querySelector('.design'), document.querySelector('.ux')];
+    const highlights = document.querySelectorAll('.timeline div');
+    const footer = document.querySelector('footer');
     
     bulb.addEventListener('click', darkMode);
 
@@ -315,26 +318,44 @@ window.addEventListener('DOMContentLoaded', function(e){
         bulb.classList.add('fa-lightbulb');
         bulb.style.color = '#ffffff';
 
-        // body
+        // body 
         body.style.backgroundColor = '#0c2431';
         // header
-        header.style.backgroundColor = '#01131c';
+        header.style.backgroundColor = '#0e1d26';
         heading.style.color = '#ffffff';
         // menu 
         hamburger.forEach(ham => {
             ham.style.backgroundColor = '#ffffff';
         })
-        menuDiv.style.backgroundColor = '#01131c';
+        menuDiv.style.backgroundColor = '#0e1d26';
         // menu links
         links.forEach(link => {
             link.style.color = '#22e1ee';
         })
+        // footer
+        footer.style.backgroundColor = '#0c2431';
+        footer.firstElementChild.style.borderTop = '1px solid #384953';
+        footer.firstElementChild.lastElementChild.firstElementChild.style.color = '#ffffff';
+        // home section
+        document.querySelector('.btn').style.backgroundColor = 'transparent';
         // about section
         definitions.forEach(definition => {
             definition.style.backgroundColor = '#132a36';
             definition.style.boxShadow = '-5px 5px 32px #071c27';
             definition.firstElementChild.style.color = '#ffffff'; // h3
             definition.lastElementChild.style.color = '#ffffff'; // p
+        })
+        // lessons section
+        lessonDivs.forEach(div => {
+            div.style.backgroundColor = '#1b313b';
+            div.firstElementChild.style.backgroundColor = '#0e1d26';
+            div.lastElementChild.style.color = '#ffffff';
+        })
+        // next section
+        highlights.forEach(item => {
+            item.style.backgroundColor = '#1b313b';
+            item.firstElementChild.style.color = '#ffffff';
+            item.lastElementChild.style.color = '#ffffff';
         })
         bodyLinks.forEach(link => {
             link.style.color = '#ffffff';
