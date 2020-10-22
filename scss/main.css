@@ -471,7 +471,7 @@ main section.lessons .lessons_inner div .overlay {
 main section.lessons .lessons_inner div h3 {
   position: relative;
   z-index: 2;
-  color: #131c46;
+  color: #0064c8;
   font-size: 19px;
 }
 
@@ -608,7 +608,6 @@ footer .container {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-top: 16px;
-  border-top: 1px solid #bfbfbf;
 }
 
 footer .container h3.clock {

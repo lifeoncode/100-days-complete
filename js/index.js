@@ -320,6 +320,9 @@ window.addEventListener('DOMContentLoaded', function(e){
 
         // body 
         body.style.backgroundColor = '#0c2431';
+        bodyLinks.forEach(link => {
+            link.style.color = '#ffffff';
+        })
         // header
         header.style.backgroundColor = '#0e1d26';
         heading.style.color = '#ffffff';
@@ -332,10 +335,6 @@ window.addEventListener('DOMContentLoaded', function(e){
         links.forEach(link => {
             link.style.color = '#22e1ee';
         })
-        // footer
-        footer.style.backgroundColor = '#0c2431';
-        footer.firstElementChild.style.borderTop = '1px solid #384953';
-        footer.firstElementChild.lastElementChild.firstElementChild.style.color = '#ffffff';
         // home section
         document.querySelector('.btn').style.backgroundColor = 'transparent';
         // about section
@@ -357,9 +356,10 @@ window.addEventListener('DOMContentLoaded', function(e){
             item.firstElementChild.style.color = '#ffffff';
             item.lastElementChild.style.color = '#ffffff';
         })
-        bodyLinks.forEach(link => {
-            link.style.color = '#ffffff';
-        })
+        // footer
+        footer.style.backgroundColor = '#0c2431';
+        footer.firstElementChild.style.borderTop = '1px solid #384953';
+        footer.firstElementChild.lastElementChild.firstElementChild.style.color = '#ffffff';
     }
 
     function lightMode(e){
@@ -368,6 +368,50 @@ window.addEventListener('DOMContentLoaded', function(e){
         
         bulb.setAttribute('class', 'far');
         bulb.classList.add('fa-lightbulb');
+        bulb.style.color = '#131c46';
+
+        // body 
+        body.style.backgroundColor = '#0064c8';
+        bodyLinks.forEach(link => {
+            link.style.color = '#131c46';
+        })
+        // header
+        header.style.backgroundColor = '#fbfdff';
+        heading.style.color = '#131c46';
+        // menu 
+        hamburger.forEach(ham => {
+            ham.style.backgroundColor = '#000000';
+        })
+        menuDiv.style.backgroundColor = '#ffffff';
+        // menu links
+        links.forEach(link => {
+            link.style.color = '#072dac';
+        })
+        // home section
+        document.querySelector('.btn').style.backgroundColor = '#ffffff';
+        // about section
+        definitions.forEach(definition => {
+            definition.style.backgroundColor = '#ffffff';
+            definition.style.boxShadow = '-5px 5px 32px #062793';
+            definition.firstElementChild.style.color = '#131c46'; // h3
+            definition.lastElementChild.style.color = '#131c46'; // p
+        })
+        // lessons section
+        lessonDivs.forEach(div => {
+            div.style.backgroundColor = '#ffffff';
+            div.firstElementChild.style.backgroundColor = '#131c46';
+            div.lastElementChild.style.color = '#0064c8';
+        })
+        // next section
+        highlights.forEach(item => {
+            item.style.backgroundColor = '#ffffff';
+            item.firstElementChild.style.color = '#131c46';
+            item.lastElementChild.style.color = '#131c46';
+        })
+        // footer
+        footer.style.backgroundColor = '#fbfdff';
+        footer.firstElementChild.style.borderTop = '1px solid #384953';
+        footer.firstElementChild.lastElementChild.firstElementChild.style.color = '#131c46';
     }
 
 
