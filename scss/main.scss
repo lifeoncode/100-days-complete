@@ -655,6 +655,11 @@ footer {
         font-size: $medium-font + 5;
       }
     }
+
+    i.fa-power-off {
+      margin-top: 32px;
+      font-size: $medium-font;
+    }
   }
 }
 
